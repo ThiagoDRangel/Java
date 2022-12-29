@@ -1,5 +1,5 @@
 import java.time.Instant;
-//import java.time.LocalDate;
+import java.time.LocalDate;
 //import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -13,5 +13,9 @@ public class App {
 
       System.out.println("Formatação Brasil " + fmt1.format(d00));
       System.out.println("Formatação ISO " + d00.toString());
+
+      LocalDate d01 = LocalDate.parse("2022-12-28");
+      LocalDate future = d01.plusYears(5);
+      System.out.println("5 anos depois: " + future);
     }
 }
