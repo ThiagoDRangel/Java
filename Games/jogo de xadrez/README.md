@@ -2,9 +2,9 @@
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+Estrutura do projeto desenvolvido
 
-The workspace contains two folders by default, where:
+![image](https://user-images.githubusercontent.com/84294489/210679766-1e36477a-5ad0-45b1-a471-2be98b383d35.png)
 
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
