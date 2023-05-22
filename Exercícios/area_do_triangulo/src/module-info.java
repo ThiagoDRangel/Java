@@ -5,5 +5,5 @@
  * @author thiago
  *
  */
-module App {
+module area_do_triangulo {
 }
