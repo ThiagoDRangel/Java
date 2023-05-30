@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.Locale;
 import java.util.Scanner;
 import services.OrderService;
-import services.ShippingService;
+
 
 @SpringBootApplication
 @ComponentScan({"com.example.componente.de.inj.dep"})
@@ -27,20 +27,19 @@ public class Application {
 		int codigo = sc.nextInt();
 
 		System.out.print("Digite o valor do produto: ");
-		product.valor = sc.nextInt();
+		String valorEntrada = sc.next();
+		String format = valorEntrada.replace(",", ".");
+		product.valor = Double.parseDouble(format);
 
 		System.out.print(("Digite a porcentagem de desconto: "));
 		product.percentage = sc.nextDouble();
 
 		double result = product.percentValue(product.valor, product.percentage);
-
-		ShippingService frete;
-		frete = new ShippingService();
-
-		double productFinal = result + frete.calculo(product.valor);
+		double frete = product.calculateShipping(product.valor);
+		double total = result + frete;
 
 		System.out.println("Pedido código: " + codigo);
-		System.out.println("Valor total: R$ " + productFinal);
+		System.out.printf("Valor total: R$ %.2f\n", total);
 	}
 
 }
