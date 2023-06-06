@@ -2,9 +2,7 @@ package com.thiagoDRangel.pack.entities;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_atividade")
@@ -26,6 +24,9 @@ public class Atividade {
         joinColumns = @JoinColumn(name = "atividade_id"),
         inverseJoinColumns = @JoinColumn(name = "participante_id"))
     private Set<Participante> participantes = new HashSet<>();
+
+    @OneToMany(mappedBy = "atividades")
+    private List<Bloco> blocos = new ArrayList<>();
     public Atividade() {
     }
 
@@ -74,6 +75,10 @@ public class Atividade {
 
     public Set<Participante> getParticipantes() {
         return participantes;
+    }
+
+    public List<Bloco> getBlocos() {
+        return blocos;
     }
 
     @Override
