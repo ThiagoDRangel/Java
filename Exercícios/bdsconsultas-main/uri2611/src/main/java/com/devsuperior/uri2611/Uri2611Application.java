@@ -17,6 +17,7 @@ public class Uri2611Application implements CommandLineRunner {
 	@Autowired
 	private MovieRepository repository;
 	public static void main(String[] args) {
+
 		SpringApplication.run(Uri2611Application.class, args);
 	}
 
