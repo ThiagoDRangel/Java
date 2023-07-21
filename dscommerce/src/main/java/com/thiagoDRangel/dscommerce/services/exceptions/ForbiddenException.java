@@ -1,9 +1,9 @@
 package com.thiagoDRangel.dscommerce.services.exceptions;
 
 @SuppressWarnings("serial")
-public class DatabaseException extends RuntimeException {
+public class ForbiddenException extends RuntimeException {
 
-    public DatabaseException(String msg) {
+    public ForbiddenException(String msg) {
         super(msg);
     }
 }
